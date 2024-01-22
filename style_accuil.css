@@ -1,0 +1,31 @@
+
+
+#left-part {
+  float: left;
+  width: 30%;
+}
+
+#right-part {
+  float: right;
+  width: 70%;
+}
+.t1{
+  margin: auto;
+  color: blueviolet;
+}
+#b1{
+  font-size: large;
+  font-family: system-ui;
+}
+#a1{
+  font-size: large;
+  font-family: Georgia, serif;
+  background-color: rgb(56, 56, 57);
+  color: rgb(171, 171, 171);
+}
+nav{
+  background-color: rgb(219, 215, 209);
+  font-size: large;
+}
+body{
+  background-color: rgb(208, 213, 218);}

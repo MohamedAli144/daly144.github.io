@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="style_quiz.css" rel="stylesheet">
+		<title>Parcours Académique "Mo_Ali_Chakroun"</title>
+	</head>
+	<body>
+        <center>
+        <figure>
+            <img src="image_quiz/couverture.png" width="100%">
+        </figure>
+        </center>
+        <nav>
+        <center>
+            <table>
+                <td><a href="index.html">|Accuil</a></td>
+                <td><a href="parcours_académique.html">|Parcours Académique</a></td>
+            <td><a href="compétences.html">|Compétences</a></td>
+            <td><a href="formations.html">|Formation & évènements</a></td>
+            <td><a href="passions.html">|Mes Passions</a></td>
+            <td><a href="quiz.html">|QUIZ</a></td>
+            <td><a href="contact.html">|Contact</a></td>
+            </table>
+        </center>
+        </nav>
+        <body>
+            <h1>Quiz de géographie</h1>
+            <form>
+                <fieldset>
+                    <legend>Question 1</legend>
+                    <label for="q1">Quelle est la capitale de la France ?</label><br>
+                    <input type="radio" id="q1a" name="q1" value="a">
+                    <label for="q1a">Paris</label><br>
+                    <input type="radio" id="q1b" name="q1" value="b">
+                    <label for="q1b">Londres</label><br>
+                    <input type="radio" id="q1c" name="q1" value="c">
+                    <label for="q1c">Berlin</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Question 2</legend>
+                    <label for="q2">Quel est le plus grand pays du monde ?</label><br>
+                    <input type="radio" id="q2a" name="q2" value="a">
+                    <label for="q2a">Russie</label><br>
+                    <input type="radio" id="q2b" name="q2" value="b">
+                    <label for="q2b">Canada</label><br>
+                    <input type="radio" id="q2c" name="q2" value="c">
+                    <label for="q2c">Chine</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Question 3</legend>
+                    <label for="q3">Quel est le plus grand océan du monde ?</label><br>
+                    <input type="radio" id="q3a" name="q3" value="a">
+                    <label for="q3a">Océan Atlantique</label><br>
+                    <input type="radio" id="q3b" name="q3" value="b">
+                    <label for="q3b">Océan Indien</label><br>
+                    <input type="radio" id="q3c" name="q3" value="c">
+                    <label for="q3c">Océan Pacifique</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Question 4</legend>
+                    <label for="q4">Quel est le plus grand désert du monde ?</label><br>
+                    <input type="radio" id="q4a" name="q4" value="a">
+                    <label for="q4a">Désert du Sahara</label><br>
+                    <input type="radio" id="q4b" name="q4" value="b">
+                    <label for="q4b">Désert de Gobi</label><br>
+                    <input type="radio" id="q4c" name="q4" value="c">
+                    <label for="q4c">Désert d'Atacama</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Question 5</legend>
+                    <label for="q5">Quel est le plus grand lac du monde ?</label><br>
+                    <input type="radio" id="q5a" name="q5" value="a">
+                    <label for="q5a">Lac Supérieur</label><br>
+                    <input type="radio" id="q5b" name="q5" value="b">
+                    <label for="q5b">Lac Victoria</label><br>
+                    <input type="radio" id="q5c" name="q5" value="c">
+                    <label for="q5c">Lac Baïkal</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Question 6</legend>
+                    <label for="q6">Quel est le plus haut sommet du monde ?</label><br>
+                    <input type="radio" id="q6a" name="q6" value="a">
+                    <label for="q6a">Mont Blanc</label><br>
+                    <input type="radio" id="q6b" name="q6" value="b">
+                    <label for="q6b">Mont Everest</label><br>
+                    <input type="radio" id="q6c" name="q6" value="c">
+                    <label for="q6c">Mont Kilimandjaro</label><br>
+                </fieldset>
+                <!-- Ajouter d'autres questions ici -->
+            </form>
+            <button id="submit">Valider le quiz</button>
+            <div id="resultat"></div>
+            <script>
+                // Créer un tableau qui contient les bonnes réponses
+                var reponses = ["a", "a", "c", "a", "c", "b"];
+                // Créer une variable qui compte le nombre de réponses correctes
+                var score = 0;
+                // Créer une fonction qui calcule et affiche le score
+                function afficherScore() {
+                    // Pour chaque question
+                    for (var i = 0; i < reponses.length; i++) {
+                        // Récupérer l'élément input qui correspond à la bonne réponse
+                        var input = document.getElementById("q" + (i + 1) + reponses[i]);
+                        // Vérifier si l'input est coché
+                        if (input.checked) {
+                            // Augmenter le score
+                            score++;
+                        }
+                    }
+                    // Sélectionner l'élément qui affiche le score
+                    var resultat = document.getElementById("resultat");
+                    // Modifier le contenu de l'élément avec le score
+                    resultat.innerHTML = "Vous avez " + score + " bonnes réponses sur " + reponses.length;
+                }
+                // Sélectionner le bouton de validation
+                var bouton = document.getElementById("submit");
+                // Ajouter un événement click sur le bouton
+                bouton.addEventListener("click", function() {
+                    // Appeler la fonction qui calcule et affiche le score
+                    afficherScore();
+                });
+            </script>
+        </body>
+        </html>
